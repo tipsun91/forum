@@ -1,17 +1,11 @@
 <?php
 
-namespace Tests\ForumBundle\Controller;
+namespace Tests\ForumBundle\Controller\Forum;
 
-use Tests\ForumBundle\ForumWebTestCase;
-use Symfony\Component\HttpFoundation\Response;
 
-class ForumControllerTest extends ForumWebTestCase
+trait ControllerTest
 {
-    /**
-     * @param array $topic
-     * @dataProvider topicFixtureProvider
-     */
-    public function testShow($topic)
+    public function traitShow($topic)
     {
         $crawler = self::$client->click(
             self::$crawler->filter('a.forum_link')->first()->link()
@@ -40,6 +34,6 @@ class ForumControllerTest extends ForumWebTestCase
             $crawler = $isFound ? false : self::pagination($crawler);
         }
 
-        $this->assertTrue($isFound);
+        return $isFound;
     }
 }

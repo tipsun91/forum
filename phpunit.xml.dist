@@ -14,13 +14,51 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
+
             <file>tests/ForumBundle/ForumWebTestCase.php</file>
-            <file>tests/ForumBundle/Controller/Forum/UserControllerTest.php</file>
-            <file>tests/ForumBundle/Controller/DefaultControllerTest.php</file>
-            <file>tests/ForumBundle/Controller/Forum/ForumControllerTest.php</file>
-            <file>tests/ForumBundle/Controller/Forum/TopicControllerTest.php</file>
-            <file>tests/ForumBundle/Controller/Forum/PostControllerTest.php</file>
+
+            <!-- Default/ControllerTest -->
+            <file>tests/ForumBundle/Controller/Main/GuestControllerTest.php</file>
+            <file>tests/ForumBundle/Controller/Main/UserControllerTest.php</file>
+            <file>tests/ForumBundle/Controller/Main/AdminControllerTest.php</file>
+            <file>tests/ForumBundle/Controller/Main/SuperAdminControllerTest.php</file>
+            <!-- Default/ControllerTest -->
+
+            <!-- User/ControllerTest -->
+            <!--<file>tests/ForumBundle/Controller/User/GuestControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/User/UserControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/User/AdminControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/User/SuperAdminControllerTest.php</file>-->
+            <!-- User/ControllerTest -->
+
+            <!-- Forum/ControllerTest -->
+            <!--<file>tests/ForumBundle/Controller/Forum/GuestControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/UserControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/AdminControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/SuperAdminControllerTest.php</file>-->
+            <!-- Forum/ControllerTest -->
+
+            <!-- Topic/ControllerTest -->
+            <!--<file>tests/ForumBundle/Controller/Topic/GuestControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Topic/UserControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Topic/AdminControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Topic/SuperAdminControllerTest.php</file>-->
+            <!-- Topic/ControllerTest -->
+
+            <!-- Post/ControllerTest -->
+            <!--<file>tests/ForumBundle/Controller/Post/GuestControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Post/UserControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Post/AdminControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Post/SuperAdminControllerTest.php</file>-->
+            <!-- Post/ControllerTest -->
+
+            <!-- Old test structure -->
+            <!--<file>tests/ForumBundle/Controller/DefaultControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/ForumControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/TopicControllerTest.php</file>-->
+            <!--<file>tests/ForumBundle/Controller/Forum/PostControllerTest.php</file>-->
             <!--<file>tests/ForumBundle/Complex/CounterTest.php</file>-->
+            <!-- Old test structure -->
         </testsuite>
     </testsuites>
 

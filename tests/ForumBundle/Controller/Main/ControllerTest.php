@@ -1,17 +1,13 @@
 <?php
 
-namespace Tests\ForumBundle\Controller;
+namespace Tests\ForumBundle\Controller\Main;
 
-use Tests\ForumBundle\ForumWebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultControllerTest extends ForumWebTestCase
+
+trait ControllerTest
 {
-    /**
-     * @param string $forum
-     * @dataProvider forumProvider
-     */
-    public function testIndex($forum)
+    public function traitIndex($forum)
     {
         $uri = self::$container->get('router')->generate('index');
 
@@ -36,6 +32,7 @@ class DefaultControllerTest extends ForumWebTestCase
                 $domElement->next();
             }
         }
-        $this->assertTrue($isFound);
+
+        return $isFound;
     }
 }

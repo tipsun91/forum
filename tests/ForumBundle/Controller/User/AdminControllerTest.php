@@ -6,7 +6,7 @@ use Tests\ForumBundle\ForumWebTestCase;
 use Tests\ForumBundle\Controller\Forum\ControllerTest;
 
 
-class UserControllerTest extends ForumWebTestCase
+class AdminControllerTest extends ForumWebTestCase
 {
     use ControllerTest;
 

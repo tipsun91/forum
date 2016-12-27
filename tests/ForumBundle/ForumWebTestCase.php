@@ -35,7 +35,6 @@ abstract class ForumWebTestCase extends WebTestCase
         if (!self::$container) {
             self::$client = static::createClient();
             self::$container = self::$client->getContainer();
-//            self::loginAsUser();
         }
     }
 
@@ -43,13 +42,13 @@ abstract class ForumWebTestCase extends WebTestCase
      * @return Crawler
      * @throws \Exception
      */
-    protected static function loginAsUser()
+    protected static function login($username, $password)
     {
         $uri = self::$container->get('router')->generate('login_route');
 
         $crawler = self::$client->request('GET', $uri);
 
-        $form = $crawler->selectButton('login_btn')->form(['_username' => 'test', '_password' => '12345678']);
+        $form = $crawler->selectButton('login_btn')->form(['_username' => $username, '_password' => $password]);
 
         self::$client->submit($form);
 

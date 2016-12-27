@@ -1,18 +1,16 @@
 <?php
 
-namespace Tests\ForumBundle\Controller;
+namespace Tests\ForumBundle\Controller\Topic;
 
-use Tests\ForumBundle\ForumWebTestCase;
-use Symfony\Component\HttpFoundation\Response;
 
-class TopicControllerTest extends ForumWebTestCase
+trait ControllerTest
 {
     /**
      * @param array $topic
      * @param array $post
      * @dataProvider topicProvider
      */
-    public function testAdd($topic, $post)
+    public function traitAdd($topic, $post)
     {
         $crawler = self::$client->click(
             self::$crawler->filter('a.forum_link')->first()->link()
@@ -40,7 +38,7 @@ class TopicControllerTest extends ForumWebTestCase
      * @dataProvider topicProvider
      * @depends testAdd
      */
-    public function testShow($topic)
+    public function traitShow($topic)
     {
         $crawler = self::$client->click(
             self::$crawler->filter('a.forum_link')->first()->link()
@@ -75,7 +73,7 @@ class TopicControllerTest extends ForumWebTestCase
     /**
      * @depends testShow
      */
-    public function testEdit()
+    public function traitEdit()
     {
         $crawler = self::$client->click(
             self::$crawler->filter('a.forum_link')->first()->link()
@@ -104,7 +102,7 @@ class TopicControllerTest extends ForumWebTestCase
     /**
      * @depends testEdit
      */
-    public function testDelete()
+    public function traitDelete()
     {
         $crawler = self::$client->click(
             self::$crawler->filter('a.forum_link')->first()->link()

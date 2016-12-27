@@ -6,7 +6,7 @@ use Tests\ForumBundle\ForumWebTestCase;
 use Tests\ForumBundle\Controller\Forum\ControllerTest;
 
 
-class UserControllerTest extends ForumWebTestCase
+class GuestControllerTest extends ForumWebTestCase
 {
     use ControllerTest;
 
@@ -16,6 +16,6 @@ class UserControllerTest extends ForumWebTestCase
      */
     public function testShow($topic)
     {
-        $this->assertTrue($this->show($topic));
+        $this->assertTrue(parent::testShow($topic));
     }
 }
