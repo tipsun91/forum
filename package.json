@@ -1,0 +1,39 @@
+{
+    "name": "gemorroj/forum",
+    "version": "0.0.1",
+    "description": "forum",
+    "author": "Gemorroj",
+    "license": "GPLv3",
+    "main": "assets/app.js",
+    "dependencies": {
+        "@websanova/vue-auth": "^2.16.1-beta",
+        "element-ui": "^1.4.2",
+        "vue": "^2.4.2",
+        "vue-image-lightbox": "^5.5.3",
+        "vue-lazyload": "^1.0.6",
+        "vue-resource": "^1.3.4",
+        "vue-router": "^2.7.0",
+        "vue-touch": "^2.0.0-beta.4",
+        "vuex": "^2.3.1"
+    },
+    "devDependencies": {
+        "babel-core": "^7.0.0-alpha.19",
+        "babel-loader": "^7.1.1",
+        "babel-preset-es2015": "^7.0.0-alpha.19",
+        "css-loader": "^0.28.4",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "file-loader": "^0.11.2",
+        "html-webpack-plugin": "^2.30.1",
+        "style-loader": "^0.18.2",
+        "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+        "vue-loader": "^13.0.4",
+        "vue-template-compiler": "^2.4.2",
+        "webpack": "^3.5.4"
+    },
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack --config webpack.config.js",
+        "build:watch": "webpack --config webpack.config.js --watch",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
