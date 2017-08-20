@@ -11,11 +11,15 @@ class GuestControllerTest extends ForumWebTestCase
     use ControllerTest;
 
     /**
-     * @param array $topic
-     * @dataProvider topicFixtureProvider
+     * @param string $username
+     * @param string $plainPassword
+     * @dataProvider userProvider
      */
-    public function testShow($topic)
+    public function testNew($username, $plainPassword)
     {
-        $this->assertTrue($this->show($topic));
+        $this->assertEquals(
+            $username,
+            $this->traitNew($username, $plainPassword)
+        );
     }
 }

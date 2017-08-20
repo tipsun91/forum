@@ -24,25 +24,20 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
     public function load(ObjectManager $manager)
     {
         $users = [
-            'test' => [
+            'user' => [
                 'plainPassword' => '12345678',
-                'sex' => null,
-            ],
-            'aaaa' => [
-                'plainPassword' => '11111111',
-                'sex' => User::SEX_MALE,
-            ],
-            'bbbb' => [
-                'plainPassword' => '22222222',
-                'sex' => User::SEX_MALE,
-            ],
-            'cccc' => [
-                'plainPassword' => '33333333',
                 'sex' => User::SEX_FEMALE,
+                'role' => 'ROLE_USER',
             ],
-            'dddd' => [
-                'plainPassword' => '44444444',
-                'sex' => User::SEX_FEMALE,
+            'admin' => [
+                'plainPassword' => '12345678',
+                'sex' => User::SEX_MALE,
+                'role' => 'ROLE_ADMIN',
+            ],
+            'super' => [
+                'plainPassword' => '12345678',
+                'sex' => User::SEX_MALE,
+                'role' => 'ROLE_SUPER_ADMIN',
             ],
         ];
 
@@ -51,11 +46,12 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
             $user->setUsername($username);
             $user->setPlainPassword($data['plainPassword']);
             $user->setSex($data['sex']);
+            $user->setRoles([$data['role']]);
 
             $manager->persist($user);
             $manager->flush();
 
-            if ('test' == $username) {
+            if ('user' == $username) {
                 $this->setReference('user', $user);
             }
         }

@@ -3,7 +3,6 @@
 namespace Tests\ForumBundle\Controller;
 
 use Tests\ForumBundle\ForumWebTestCase;
-use Tests\ForumBundle\Controller\Forum\ControllerTest;
 
 
 class AdminControllerTest extends ForumWebTestCase
@@ -11,11 +10,16 @@ class AdminControllerTest extends ForumWebTestCase
     use ControllerTest;
 
     /**
-     * @param array $topic
-     * @dataProvider topicFixtureProvider
+     * @param string $message
+     * @param string $oldPassword
+     * @param string $newPassword
+     * @dataProvider passwordProvider
      */
-    public function testShow($topic)
+    public function testChangePassword($message, $oldPassword, $newPassword)
     {
-        $this->assertTrue($this->show($topic));
+        $this->assertEquals(
+            $message,
+            $this->traitChangePassword($message, $oldPassword, $newPassword)
+        );
     }
 }

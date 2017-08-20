@@ -6,15 +6,11 @@ namespace Tests\ForumBundle\Controller\User;
 trait ControllerTest
 {
     /**
-     * Гость, в случае успешной регистрации, будет перенаправлен на страницу своего профиля (отправная точка).
-     *
      * @param string $username
      * @param string|integer $password
-     * @param integer $sex
-     * @param string $role
      * @dataProvider userProvider
      */
-    public function traitNew($username, $password, $sex, $role)
+    public function traitNew($username, $password)
     {
         self::$crawler = self::$client->request(
             'GET',
@@ -35,12 +31,10 @@ trait ControllerTest
 
         self::$crawler = self::$client->followRedirect();
 
-        $this->assertEquals($username, self::$crawler->filter('div#profile_owner')->text());
+        return self::$crawler->filter('div#profile_owner')->text();
     }
 
     /**
-     * Пользователь, кликая кнопку "Смена пароля", переходит на страницу изменения пароля, после чего меняет его.
-     *
      * @param string $message
      * @param string $oldPassword
      * @param string $newPassword
@@ -63,7 +57,9 @@ trait ControllerTest
 
         $crawler = self::$client->submit($form);
 
-        $this->assertEquals($message, $crawler->filter('p.flash-notice')->text());
+        $result = $this->assertEquals($message, $crawler->filter('p.flash-notice')->text());
+
+        return $result;
     }
 
     /**
